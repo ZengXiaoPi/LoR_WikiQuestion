@@ -32,23 +32,23 @@
 同一考生每天最多可考2次，同一考生总共最多可考5次<br>
 简单（每题25分）
           </div>
-          <ul>
+          <ol>
             ${selectedEasyQuestions.map(question => `<li>${question}</li>`).join('')}
-          </ul>
+          </ol>
           <div>普通（每题50分）</div>
-          <ul>
+          <ol>
             ${selectedMediumQuestions.map(question => `<li>${question}</li>`).join('')}
-          </ul>
+          </ol>
           <div>困难（每题75分）</div>
-          <ul>
+          <ol>
             ${selectedHardQuestions.map(question => `<li>${question}</li>`).join('')}
-          </ul>
+          </ol>
           <div>极难（每题100分）</div>
-          <ul>
+          <ol>
             ${selectedExtremeQuestions.map(question => `<li>${question}</li>`).join('')}
-            找出用户:一位咸鱼在图书馆维基中留下的任意五个彩蛋。
-            提供你的图书馆全成就截图。
-          </ul>
+            <li>找出用户:一位咸鱼在图书馆维基中留下的任意五个彩蛋</li>
+            <li>提供你的图书馆全成就截图。</li>
+          </ol>
         `;
 
         document.getElementById('questions').innerHTML = content;
