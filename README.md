@@ -9,13 +9,13 @@
 
 按照格式添加题目即可。
 例如：
-`
+```
 var easyQuestions = ["第一个简单问题"， "第二个简单问题"]
 
 添加第三个问题即为
 
 var easyQuestions = ["第一个简单问题"， "第二个简单问题", "第三个简单问题"]
-`
+```
 
 easyQuestions 为简单问题
 mediumQuestions 为普通问题
