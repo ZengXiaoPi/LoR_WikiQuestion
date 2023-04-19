@@ -12,8 +12,8 @@
     ol {
       list-style-position: inside;
     }
-    li {
-      user-select: none;
+    li::marker {
+      font-weight: bold; /* 设置序号粗体 */
     }
     </style>
     <title>月亮计划中文维基编辑部入群问题生成器</title>
@@ -28,7 +28,6 @@
             <div class="mdui-panel-item-body">
               <div id="questions"></div><br>
               <button class="mdui-btn mdui-btn-raised mdui-ripple" onclick="generateQuestions()">生成废墟图书馆问题</button>
-              <button class="mdui-btn mdui-btn-raised mdui-ripple" onclick="copyContent()">复制问题</button>
             </div>
           </div>
           <div class="mdui-panel-item">
@@ -87,31 +86,6 @@
 
         document.getElementById('questions').innerHTML = content;
       }
-      function copyContent() {
-        // 获取要复制的 div 元素
-        var content = document.getElementById('questions');
-
-        // 创建一个 textarea 元素，并将其样式设置为不可见
-        var textarea = document.createElement('textarea');
-        textarea.style.position = 'absolute';
-        textarea.style.left = '-9999px';
-
-        // 将 div 元素的内容设置为 textarea 的值
-        textarea.value = content.outerHTML;
-
-        // 将 textarea 添加到文档中
-        document.body.appendChild(textarea);
-
-        // 复制 textarea 的内容到剪贴板
-        textarea.select();
-        document.execCommand('copy');
-
-        // 从文档中删除 textarea 元素
-        document.body.removeChild(textarea);
-
-        // 弹出提示框
-        alert('内容已复制到剪贴板！');
-    }
     </script>
     <script src="https://unpkg.com/mdui@1.0.2/dist/js/mdui.min.js"></script>
   </body>
