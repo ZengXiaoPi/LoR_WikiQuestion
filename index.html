@@ -44,11 +44,11 @@
             ${selectedHardQuestions.map(question => `<li>${question}</li>`).join('')}
           </ul>
           <div>极难（每题100分）</div>
-          <div>
-            1. ${selectedExtremeQuestions.map(question => `<li>${question}</li>`).join('')}
-            2. 找出用户:一位咸鱼在图书馆维基中留下的任意五个彩蛋。
-            3. 提供你的图书馆全成就截图。
-          </div>
+          <ul>
+            ${selectedExtremeQuestions.map(question => `<li>${question}</li>`).join('')}
+            找出用户:一位咸鱼在图书馆维基中留下的任意五个彩蛋。
+            提供你的图书馆全成就截图。
+          </ul>
         `;
 
         document.getElementById('questions').innerHTML = content;
