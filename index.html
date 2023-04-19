@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>废墟图书馆中文维基编辑部入群问题生成器</title>
+  </head>
+  <body>
+    <div id="questions"></div>
+    <button onclick="generateQuestions()">生成废墟图书馆问题</button>
+
+    <script>
+      var easyQuestions = ["哪个楼层只有四个异想体？", "杂质转移被动能力费用上限？", "游戏结束时有两个无法更换核心书页的角色，他们是？（注：安吉拉不算）", "在哪场接待中首次可以使用哲学层指定司书Binah参与接待？", "来宾殷红迷雾多少体力展现EGO？","来宾菲利普在哪场接待中首次出现？","图书馆最后一战的对手是？","残响乐团与扭曲残响乐团之间的那一战接待的来宾是？","被动“踽踽独行”的归属核心书页是？","一张核心书页最多附属多少张核心书页？","异想体书页“剧烈搏动”是几级异想体书页？","异想体书页［受缚的愤怒］使用时会有什么负面效果？","被动“缪的技巧”最高可以增加多少骰子威力？","尼可莱或装备尼可莱之页的司书所施加的［集火］将使所受伤害增加多少？"];
+      var mediumQuestions = ["Medium Question 1", "Medium Question 2", "Medium Question 3", "Medium Question 4", "Medium Question 5"];
+      var hardQuestions = ["Hard Question 1", "Hard Question 2", "Hard Question 3", "Hard Question 4", "Hard Question 5"];
+      var extremeQuestions = ["Extremequestion1", "ExtremeQuestion2"];
+
+      function selectRandomQuestions(questions, count) {
+        var shuffled = questions.sort(() => 0.5 - Math.random());
+        return shuffled.slice(0, count);
+      }
+
+      function generateQuestions() {
+        var selectedEasyQuestions = selectRandomQuestions(easyQuestions, 4);
+        var selectedMediumQuestions = selectRandomQuestions(mediumQuestions, 3);
+        var selectedHardQuestions = selectRandomQuestions(hardQuestions, 2);
+        var selectedExtremeQuestions = selectRandomQuestions(extremeQuestions, 1);
+
+        var content = `
+          <div>
+          以下题目不必全部答出，但需答出275分才可通过，时间20分钟<br>
+考生答题时可以查看游戏和维基，但是不能直接百度题目<br>
+如果你拥有特殊技能，例如翻译（英语，韩语，日语）；解包（Unity C#）；网站设计，前端后端（Html，Css，JavaScript）；PHP，Node.JS，Lua，Python四个编程语言（其他编程语言也可以）等或你先前在其他维基（例如Fandom）工作过，请和考官交流，会根据情况加分或直接通过。<br>
+同一考生每天最多可考2次，同一考生总共最多可考5次<br>
+简单（每题25分）
+          </div>
+          <ul>
+            ${selectedEasyQuestions.map(question => `<li>${question}</li>`).join('')}
+          </ul>
+          <div>普通（每题50分）</div>
+          <ul>
+            ${selectedMediumQuestions.map(question => `<li>${question}</li>`).join('')}
+          </ul>
+          <div>困难（每题75分）</div>
+          <ul>
+            ${selectedHardQuestions.map(question => `<li>${question}</li>`).join('')}
+          </ul>
+          <div>极难（每题100分）</div>
+          <div>
+            1. ${selectedExtremeQuestions.map(question => `<li>${question}</li>`).join('')}
+            2. 找出用户:一位咸鱼在图书馆维基中留下的任意五个彩蛋。
+            3. 提供你的图书馆全成就截图。
+          </div>
+        `;
+
+        document.getElementById('questions').innerHTML = content;
+      }
+    </script>
+  </body>
+</html>
