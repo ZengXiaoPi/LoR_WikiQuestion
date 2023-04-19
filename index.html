@@ -1,11 +1,36 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>废墟图书馆中文维基编辑部入群问题生成器</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no"/>
+    <meta name="renderer" content="webkit"/>
+    <meta name="force-rendering" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <!-- MDUI CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/mdui@1.0.2/dist/css/mdui.min.css"/>
+    <title>月亮计划中文维基编辑部入群问题生成器</title>
   </head>
-  <body>
-    <div id="questions"></div>
-    <button onclick="generateQuestions()">生成废墟图书馆问题</button>
+  <body class="mdui-theme-layout-dark">
+    <div class="mdui-container">
+      <div class="mdui-typo">
+        <h1><strong>本站禁止外传</strong></h1>
+        <div class="mdui-panel" mdui-panel>
+          <div class="mdui-panel-item">
+            <div class="mdui-panel-item-header"><strong>Library Of Ruina（点击展开）</strong></div>
+            <div class="mdui-panel-item-body">
+              <div id="questions"></div>
+              <button .mdui-btn-raised onclick="generateQuestions()">生成废墟图书馆问题</button>
+            </div>
+          </div>
+          <div class="mdui-panel-item">
+            <div class="mdui-panel-item-header"><strong>Limbus Company（点击展开）</strong></div>
+            <div class="mdui-panel-item-body">
+              <div>尚未制作</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <script>
       var easyQuestions = ["哪个楼层只有四个异想体？", "杂质转移被动能力费用上限？", "游戏结束时有两个无法更换核心书页的角色，他们是？（注：安吉拉不算）", "在哪场接待中首次可以使用哲学层指定司书Binah参与接待？", "来宾殷红迷雾多少体力展现EGO？","来宾菲利普在哪场接待中首次出现？","图书馆最后一战的对手是？","残响乐团与扭曲残响乐团之间的那一战接待的来宾是？","被动“踽踽独行”的归属核心书页是？","一张核心书页最多附属多少张核心书页？","异想体书页“剧烈搏动”是几级异想体书页？","异想体书页［受缚的愤怒］使用时会有什么负面效果？","被动“缪的技巧”最高可以增加多少骰子威力？","尼可莱或装备尼可莱之页的司书所施加的［集火］将使所受伤害增加多少？"];
@@ -54,5 +79,7 @@
         document.getElementById('questions').innerHTML = content;
       }
     </script>
+    <!-- MDUI CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/mdui@1.0.2/dist/css/mdui.min.css"/>
   </body>
 </html>
