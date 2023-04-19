@@ -97,7 +97,7 @@
         textarea.style.left = '-9999px';
 
         // 将 div 元素的内容设置为 textarea 的值
-        textarea.value = content.innerHTML;
+        textarea.value = content.outerHTML;
 
         // 将 textarea 添加到文档中
         document.body.appendChild(textarea);
